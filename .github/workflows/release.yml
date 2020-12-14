@@ -18,9 +18,9 @@ jobs:
       with:
         dotnet-version: 5.0.100
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore src/DbCtl.Connectors.sln
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore src/DbCtl.Connectors.sln
     - uses: nuget/setup-nuget@v1
       with:
         nuget-api-key: ${{ secrets.NUGETAPIKEY }}
