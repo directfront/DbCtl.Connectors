@@ -25,7 +25,7 @@
         <license type="expression">Apache-2.0</license>
         <icon>images\database.png</icon>
         <repository type="git" url="https://github.com/directfront/DbCtl.Connectors" branch="main" />
-        <releaseNotes></releaseNotes>
+        <releaseNotes>Adds initial IDbConnector interface with corresponding metadata interface for MEF exports. Adds ChangeLogEntry with parsing functionality from filename to schema change log record.</releaseNotes>
 		<dependencies>
 			<group targetFramework="net5.0">
 				<dependency id="Microsoft.NETCoreApp" version="5.0.0" />
