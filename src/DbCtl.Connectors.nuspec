@@ -28,7 +28,7 @@
         <releaseNotes>Adds initial IDbConnector interface with corresponding metadata interface for MEF exports. Adds ChangeLogEntry with parsing functionality from filename to schema change log record.</releaseNotes>
 		<dependencies>
 			<group targetFramework="net5.0">
-				<dependency id="Microsoft.NETCoreApp" version="5.0.0" />
+				<dependency id="Microsoft.NETCore.App" version="5.0.0" />
 			</group>
 		</dependencies>
 	</metadata>
