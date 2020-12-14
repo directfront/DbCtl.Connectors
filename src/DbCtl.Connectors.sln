@@ -7,10 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbCtl.Connectors", "DbCtl.C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEAA8DEF-5BE8-4FC0-8183-0AB831C90669}"
 	ProjectSection(SolutionItems) = preProject
+		DbCtl.Connectors.nuspec = DbCtl.Connectors.nuspec
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbCtl.Connectors.UnitTests", "DbCtl.Connectors.UnitTests\DbCtl.Connectors.UnitTests.csproj", "{7C32C024-CE5B-4B4F-AAC2-ECF853037A5A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbCtl.Connectors.UnitTests", "DbCtl.Connectors.UnitTests\DbCtl.Connectors.UnitTests.csproj", "{7C32C024-CE5B-4B4F-AAC2-ECF853037A5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

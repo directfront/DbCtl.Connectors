@@ -5,14 +5,19 @@
     <Company>Direct Front Systems (Pty) Ltd.</Company>
     <Product>DbCtl</Product>
     <Authors>Sydney du Plooy</Authors>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Description>Core interfaces necessary for implementing connectors.</Description>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile></PackageLicenseFile>
     <Copyright>Copyright 2020 Direct Front Systems (Pty) Ltd.</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageIcon>database.png</PackageIcon>
+    <RepositoryUrl>https://github.com/directfront/DbCtl.Connectors</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageReleaseNotes>Adds initial IDbConnector interface with corresponding metadata interface for MEF exports. Adds ChangeLogEntry with parsing functionality from filename to schema change log record.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\LICENSE">
+    <None Include="..\..\icons\database.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
