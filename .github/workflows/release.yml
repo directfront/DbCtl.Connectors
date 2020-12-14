@@ -25,5 +25,5 @@ jobs:
       with:
         nuget-api-key: ${{ secrets.NUGETAPIKEY }}
         nuget-version: '5.x'
-    - run: nuget pack ./src/DbCtl.Connectors.nuspec
-    - run: nuget push *.nupkg 
+    - run: nuget pack -OutputFileNamesWithoutVersion ./src/DbCtl.Connectors.nuspec
+    - run: nuget push ./DbCtl.Connectors.nupkg
