@@ -3,7 +3,7 @@
     <metadata>
         <id>DbCtl.Connectors</id>
         <title>DbCtl.Connectors</title>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <description>Core interfaces necessary for implementing connectors.</description>
         <authors>Direct Front Systems (Pty) Ltd.</authors>
         <copyright>
