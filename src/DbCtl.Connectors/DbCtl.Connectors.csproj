@@ -1,28 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-    <Company>Direct Front Systems (Pty) Ltd.</Company>
-    <Product>DbCtl</Product>
-    <Authors>Sydney du Plooy</Authors>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Description>Core interfaces necessary for implementing connectors.</Description>
-    <PackageLicenseFile></PackageLicenseFile>
-    <Copyright>Copyright 2020 Direct Front Systems (Pty) Ltd.</Copyright>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <PackageIcon>database.png</PackageIcon>
-    <RepositoryUrl>https://github.com/directfront/DbCtl.Connectors</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>Adds initial IDbConnector interface with corresponding metadata interface for MEF exports. Adds ChangeLogEntry with parsing functionality from filename to schema change log record.</PackageReleaseNotes>
-    <AssemblyVersion>1.0.2.0</AssemblyVersion>
-    <FileVersion>1.0.2.0</FileVersion>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\icons\database.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
 
 </Project>

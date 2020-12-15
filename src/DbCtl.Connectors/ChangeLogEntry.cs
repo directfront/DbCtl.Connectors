@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -20,11 +21,11 @@ namespace DbCtl.Interfaces
 
         internal static ChangeLogEntry Parse(string filename, string user, DateTime changeDateTime, string hash)
         {
-            if(string.IsNullOrEmpty(filename))
+            if (string.IsNullOrEmpty(filename))
                 throw new ArgumentNullException(nameof(filename));
 
             var regex = new Regex(@"^(?<mt>(f|b))-(?<ver>\d+.\d+.\d+)-(?<desc>[\w]+).(ddl|dml|dcl)$");
-            
+
             var result = regex.Match(filename);
             if (!result.Success)
                 throw new Exception($"Failed to parse {filename} to a ChangeLogEntry.");
@@ -33,7 +34,7 @@ namespace DbCtl.Interfaces
             {
                 MigrationType = result.Groups["mt"].Value.ToUpper(),
                 Version = result.Groups["ver"].Value,
-                Description = result.Groups["desc"].Value.Replace("_"," "),
+                Description = result.Groups["desc"].Value.Replace("_", " "),
                 User = user,
                 ChangeDateTime = changeDateTime,
                 Hash = hash
@@ -43,6 +44,18 @@ namespace DbCtl.Interfaces
         public static ChangeLogEntry Parse(string filename)
         {
             return Parse(filename, Environment.UserName, DateTime.Now, CalculateMD5(filename));
+        }
+
+        private static string CalculateMD5(string filename)
+        {
+            using (var md5 = MD5.Create())
+            {
+                using (var stream = File.OpenRead(filename))
+                {
+                    var hash = md5.ComputeHash(stream);
+                    return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+                }
+            }
         }
 
         public override bool Equals(object obj)
@@ -64,15 +77,15 @@ namespace DbCtl.Interfaces
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(Version, Description, Filename, Hash, ChangeDateTime, User, MigrationType);
-        }
-
-        private static string CalculateMD5(string filename)
-        {
-            using var md5 = MD5.Create();
-            using var stream = File.OpenRead(filename);
-            var hash = md5.ComputeHash(stream);
-            return BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            int hashCode = -1700650778;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Version);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Description);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Filename);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Hash);
+            hashCode = hashCode * -1521134295 + ChangeDateTime.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(User);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(MigrationType);
+            return hashCode;
         }
     }
 }

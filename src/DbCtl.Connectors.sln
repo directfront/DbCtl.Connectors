@@ -3,15 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbCtl.Connectors", "DbCtl.Connectors\DbCtl.Connectors.csproj", "{27B97D64-BB2A-4A44-9C91-89B6C080FBBC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbCtl.Connectors", "DbCtl.Connectors\DbCtl.Connectors.csproj", "{C44F50BF-6237-4010-A1B2-6758BD0D8DA0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AEAA8DEF-5BE8-4FC0-8183-0AB831C90669}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbCtl.Connectors.UnitTests", "DbCtl.Connectors.UnitTests\DbCtl.Connectors.UnitTests.csproj", "{ADB62B50-F270-47D3-AAB9-69305C16B889}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{38A27CE3-5071-4254-8F98-7E05C6AB3B28}"
 	ProjectSection(SolutionItems) = preProject
 		DbCtl.Connectors.nuspec = DbCtl.Connectors.nuspec
-		..\README.md = ..\README.md
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbCtl.Connectors.UnitTests", "DbCtl.Connectors.UnitTests\DbCtl.Connectors.UnitTests.csproj", "{7C32C024-CE5B-4B4F-AAC2-ECF853037A5A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,19 +18,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{27B97D64-BB2A-4A44-9C91-89B6C080FBBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{27B97D64-BB2A-4A44-9C91-89B6C080FBBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{27B97D64-BB2A-4A44-9C91-89B6C080FBBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{27B97D64-BB2A-4A44-9C91-89B6C080FBBC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7C32C024-CE5B-4B4F-AAC2-ECF853037A5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7C32C024-CE5B-4B4F-AAC2-ECF853037A5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7C32C024-CE5B-4B4F-AAC2-ECF853037A5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7C32C024-CE5B-4B4F-AAC2-ECF853037A5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C44F50BF-6237-4010-A1B2-6758BD0D8DA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C44F50BF-6237-4010-A1B2-6758BD0D8DA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C44F50BF-6237-4010-A1B2-6758BD0D8DA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C44F50BF-6237-4010-A1B2-6758BD0D8DA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB62B50-F270-47D3-AAB9-69305C16B889}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB62B50-F270-47D3-AAB9-69305C16B889}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB62B50-F270-47D3-AAB9-69305C16B889}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB62B50-F270-47D3-AAB9-69305C16B889}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {47E1471B-3B05-49FF-A0BD-CAB8F01968A5}
+		SolutionGuid = {7A04F787-13DF-4479-8D00-D059FCB76649}
 	EndGlobalSection
 EndGlobal
