@@ -13,6 +13,10 @@ namespace DbCtl.Interfaces
     /// </summary>
     public class ChangeLogEntry : IEquatable<ChangeLogEntry>
     {
+        internal ChangeLogEntry()
+        {
+        }
+
         /// <summary>
         /// Constructs a new change log entry assuming appliedBy as Environment.UserName and ChangeDateTime as DateTime.Now.
         /// </summary>
