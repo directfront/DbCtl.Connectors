@@ -3,7 +3,7 @@
     <metadata>
         <id>DbCtl.Connectors</id>
         <title>DbCtl.Connectors</title>
-        <version>1.1.0</version>
+        <version>2.0.0</version>
         <description>Core interfaces necessary for implementing connectors.</description>
         <authors>Direct Front Systems (Pty) Ltd.</authors>
         <copyright>
@@ -25,7 +25,14 @@
         <license type="expression">Apache-2.0</license>
         <icon>images\database.png</icon>
         <repository type="git" url="https://github.com/directfront/DbCtl.Connectors" branch="main" />
-        <releaseNotes>Adds initial IDbConnector interface with corresponding metadata interface for MEF exports. Adds ChangeLogEntry with parsing functionality from filename to schema change log record.</releaseNotes>
+        <releaseNotes>
+			1.2.0
+			1. Renamed `User` attribute to `AppliedBy`.
+			2. Added documentation to each type and attribute.
+			3. Changed `MigrationType` attribute to `char` instead of `string`.
+			4. Removed all public `Parse` methods and replaced them with constructors.
+			5. Improved unit tests.
+		</releaseNotes>
 		<dependencies>
 			<group targetFramework="netstandard2.1" />
 		</dependencies>
