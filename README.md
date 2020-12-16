@@ -4,9 +4,9 @@ Core interfaces necessary for implementing connectors.
 ## Connector Implementation Guide
 
 ### Schema ChangeLog Table
-Below is the `DbCtlChangeLog` table schema for SQL Server:
+Below is the `DbCtlChangeLog` table schema for SQL Server. The table name `DbCtlChangeLog` is not prescribed but is the suggested name. Each connector can decide on the table name, and must use it consistently with, at least, the columns in the schema below.
 
-```
+```sql
 CREATE TABLE DbCtlChangeLog (
 	MigrationType VARCHAR(15) NOT NULL,
     Version VARCHAR(10),
@@ -20,4 +20,6 @@ CREATE TABLE DbCtlChangeLog (
 ```
 
 # Credits
-Icons made by srip[https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+Icons made by [srip](https://www.flaticon.com/authors/srip) from [Flaticon](www.flaticon.com)
+
