@@ -14,8 +14,8 @@ CREATE TABLE DbCtlChangeLog (
 	Filename VARCHAR(255) NOT NULL,
 	Hash VARCHAR(64) NOT NULL CONSTRAINT UQ_DbCtlChangeLog_Hash UNIQUE,
     AppliedBy VARCHAR(50) NOT NULL,
-	ChangeDateTime DATETIME CONSTRAINT DF_DbCtlChangeLog_ChangeDateTime DEFAULT GETDATE(),
-    CONSTRAINT PK_DbCtlChangeLog PRIMARY KEY (Version, Filename)
+	ChangeDateTime DATETIME NOT NULL,
+    CONSTRAINT PK_DbCtlChangeLog PRIMARY KEY (ChangeDateTime DESC, Version DESC)
 )
 ```
 
