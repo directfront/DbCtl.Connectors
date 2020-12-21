@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -41,6 +42,6 @@ namespace DbCtl.Interfaces
         /// <param name="connectionString">Connection string to use when connecting to the managed database.</param>
         /// <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
         /// <returns>All the change log entries from the change log entry table.</returns>
-        Task<ChangeLogEntry> FetchChangeLogEntriesAsync(string connectionString, CancellationToken cancellationToken);
+        Task<IEnumerable<ChangeLogEntry>> FetchChangeLogEntriesAsync(string connectionString, CancellationToken cancellationToken);
     }
 }
