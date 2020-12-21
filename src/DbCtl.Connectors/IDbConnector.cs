@@ -16,6 +16,7 @@ namespace DbCtl.Interfaces
         /// <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
         /// <returns>The number of rows affected.</returns>
         Task<int> CreateChangeLogTableAsync(string connectionString, CancellationToken cancellationToken);
+        
         /// <summary>
         /// Adds a change log entry into the change log database table.
         /// </summary>
@@ -24,13 +25,22 @@ namespace DbCtl.Interfaces
         /// <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
         /// <returns>The number of rows affected.</returns>
         Task<int> AddChangeLogEntryAsync(string connectionString, ChangeLogEntry entry, CancellationToken cancellationToken);
+        
         /// <summary>
-        /// 
+        /// Executes a non-query scripts against the database.
         /// </summary>
         /// <param name="connectionString">Connection string to use when connecting to the managed database.</param>
         /// <param name="script">The contents of the migration script to execute against the database.</param>
         /// <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
         /// <returns>The number of rows affected.</returns>
         Task<int> ExecuteScriptAsync(string connectionString, string script, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Fetches the change log entries that have been applied to this database.
+        /// </summary>
+        /// <param name="connectionString">Connection string to use when connecting to the managed database.</param>
+        /// <param name="cancellationToken">Propagates notification that operations should be canceled.</param>
+        /// <returns>All the change log entries from the change log entry table.</returns>
+        Task<ChangeLogEntry> FetchChangeLogEntriesAsync(string connectionString, CancellationToken cancellationToken);
     }
 }

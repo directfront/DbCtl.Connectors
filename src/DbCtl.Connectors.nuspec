@@ -3,7 +3,7 @@
     <metadata>
         <id>DbCtl.Connectors</id>
         <title>DbCtl.Connectors</title>
-        <version>2.0.1</version>
+        <version>3.0.0</version>
         <description>Core interfaces necessary for implementing connectors.</description>
         <authors>Direct Front Systems (Pty) Ltd.</authors>
         <copyright>
@@ -26,8 +26,8 @@
         <icon>images\database.png</icon>
         <repository type="git" url="https://github.com/directfront/DbCtl.Connectors" branch="main" />
         <releaseNotes>
-			2.0.1
-			Adds a parameterless internal constructor for ORMs to materialize the change log entry.
+			3.0.0
+			Adds a method to fetch all the change log entries from the change log entry table.
 		</releaseNotes>
 		<dependencies>
 			<group targetFramework="netstandard2.1" />
