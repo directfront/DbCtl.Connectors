@@ -1,3 +1,6 @@
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/directfront/DbCtl.Connectors/DbCtl%20Connectors%20-%20CI?style=plastic)
+![Nuget](https://img.shields.io/nuget/dt/DbCtl.Connectors?style=plastic)
+
 # DbCtl.Connectors
 Core interfaces necessary for implementing connectors.
 
