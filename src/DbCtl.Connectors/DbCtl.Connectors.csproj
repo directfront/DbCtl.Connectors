@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyVersion>3.0.2.0</AssemblyVersion>
-    <FileVersion>3.0.2.0</FileVersion>
+    <AssemblyVersion>3.0.3.0</AssemblyVersion>
+    <FileVersion>3.0.3.0</FileVersion>
     <Authors>Direct Front Systems (Pty) Ltd.</Authors>
-    <Version>3.0.2</Version>
+    <Version>3.0.3</Version>
     <Description>Core interfaces necessary for implementing connectors.</Description>
     <Copyright>Copyright 2020 Direct Front Systems (Pty) Ltd.</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -14,7 +14,7 @@
     <RepositoryUrl>https://github.com/directfront/DbCtl.Connectors</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>
-		3.0.2
+		3.0.3
 		Exposes the filename regular expression.
 	</PackageReleaseNotes>
     <Product>DbCtl</Product>

@@ -13,7 +13,7 @@ namespace DbCtl.Interfaces
     /// </summary>
     public class ChangeLogEntry : IEquatable<ChangeLogEntry>
     {
-        public string RegexPattern = @"^(?<mt>(f|b))-(?<ver>(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)-(?<desc>[\w]+).(ddl|dml|dcl)$";
+        public string RegexPattern = @"^(?<mt>(F|B|f|b))-(?<ver>(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)-(?<desc>[\w]+).(ddl|dml|dcl)$";
 
         internal ChangeLogEntry()
         {
@@ -86,7 +86,7 @@ namespace DbCtl.Interfaces
                 throw new Exception($"Failed to parse {filename} to a ChangeLogEntry.");
 
             Filename = filename;
-            MigrationType = result.Groups["typ"].Value.ToUpperInvariant();
+            MigrationType = result.Groups["mt"].Value.ToUpperInvariant();
             Version = result.Groups["ver"].Value;
             Description = result.Groups["desc"].Value.Replace("_", " ");
             AppliedBy = appliedBy;
