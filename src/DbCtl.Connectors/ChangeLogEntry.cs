@@ -13,6 +13,8 @@ namespace DbCtl.Interfaces
     /// </summary>
     public class ChangeLogEntry : IEquatable<ChangeLogEntry>
     {
+        public string RegexPattern = @"^(?<mt>(f|b))-(?<ver>(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)-(?<desc>[\w]+).(ddl|dml|dcl)$";
+
         internal ChangeLogEntry()
         {
         }
@@ -39,7 +41,7 @@ namespace DbCtl.Interfaces
         }
 
         /// <summary>
-        /// Version number of this change.
+        /// Semver compatible version number of this change.
         /// </summary>
         public string Version { get; private set; }
         /// <summary>
@@ -49,7 +51,7 @@ namespace DbCtl.Interfaces
         /// <summary>
         /// Name of the file that originated this change log entry. It is also used to determine the hash, version, description and 
         /// migration type. All underscores are replaced with spaces to generate the description. It must conform to the following 
-        /// regular expression: ^(?<type>(F|B))-(?<version>\d+.\d+.\d+)-(?<description>[\w]+).(ddl|dml|dcl)$
+        /// regular expression: ^(?<type>(F|B))-(?<version>semver)-(?<description>[\w]+).(ddl|dml|dcl)$
         /// </summary>
         public string Filename { get; private set; }
         /// <summary>
@@ -77,7 +79,7 @@ namespace DbCtl.Interfaces
             if (string.IsNullOrEmpty(appliedBy))
                 throw new ArgumentNullException(nameof(appliedBy));
 
-            var regex = new Regex(@"^(?<typ>(F|B|f|b))-(?<ver>\d+.\d+.\d+)-(?<desc>[\w]+).(ddl|dml|dcl)$");
+            var regex = new Regex(RegexPattern);
 
             var result = regex.Match(filename);
             if (!result.Success)

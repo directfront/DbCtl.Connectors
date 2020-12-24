@@ -2,10 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyVersion>3.0.1.0</AssemblyVersion>
-    <FileVersion>3.0.1.0</FileVersion>
+    <AssemblyVersion>3.0.2.0</AssemblyVersion>
+    <FileVersion>3.0.2.0</FileVersion>
     <Authors>Direct Front Systems (Pty) Ltd.</Authors>
-    <Version>3.0.1</Version>
+    <Version>3.0.2</Version>
     <Description>Core interfaces necessary for implementing connectors.</Description>
     <Copyright>Copyright 2020 Direct Front Systems (Pty) Ltd.</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -13,8 +13,10 @@
     <PackageIcon>database.png</PackageIcon>
     <RepositoryUrl>https://github.com/directfront/DbCtl.Connectors</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>3.0.1
-Change the return type of FetchChangeLogEntriesAsync to IEnumerable of ChangeLogEntry.</PackageReleaseNotes>
+    <PackageReleaseNotes>
+		3.0.2
+		Exposes the filename regular expression.
+	</PackageReleaseNotes>
     <Product>DbCtl</Product>
   </PropertyGroup>
 
