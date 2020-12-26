@@ -1,4 +1,3 @@
-using DbCtl.Interfaces;
 using NUnit.Framework;
 using System;
 using System.IO;
@@ -33,7 +32,7 @@ namespace DbCtl.Connectors.UnitTests
         {
             using var stream = new MemoryStream();
             var exception = Assert.Throws<Exception>(() => new ChangeLogEntry("invalid-filename", _AppliedBy, _ChangeDateTime, stream));
-            Assert.AreEqual("Failed to parse invalid-filename to a ChangeLogEntry.", exception.Message);
+            Assert.AreEqual("Failed to parse invalid-filename.", exception.Message);
         }
 
         [Test]
@@ -44,7 +43,7 @@ namespace DbCtl.Connectors.UnitTests
 
             var entry = new ChangeLogEntry(filename, _AppliedBy, _ChangeDateTime, stream);
 
-            Assert.AreEqual("F", entry.MigrationType);
+            Assert.AreEqual(MigrationType.Forward, entry.MigrationType);
             Assert.AreEqual("1.0.2", entry.Version);
             Assert.AreEqual("Initialise database", entry.Description);
             Assert.AreEqual(_AppliedBy, entry.AppliedBy);

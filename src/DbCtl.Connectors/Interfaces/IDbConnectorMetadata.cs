@@ -1,4 +1,4 @@
-﻿namespace DbCtl.Interfaces
+﻿namespace DbCtl.Connectors
 {
     /// <summary>
     /// Provides metadata that is used to select this particular connector.

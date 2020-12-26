@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DbCtl.Connectors;
+using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
@@ -6,15 +7,13 @@ using System.Text.RegularExpressions;
 
 [assembly: InternalsVisibleTo("DbCtl.Connectors.UnitTests")]
 
-namespace DbCtl.Interfaces
+namespace DbCtl.Connectors
 {
     /// <summary>
     /// A database change log entry that describes a change to a database.
     /// </summary>
     public class ChangeLogEntry : IEquatable<ChangeLogEntry>
     {
-        public string RegexPattern = @"^(?<mt>(F|B|f|b))-(?<ver>(?<major>0|[1-9]\d*)\.(?<minor>0|[1-9]\d*)\.(?<patch>0|[1-9]\d*)(?:-(?<prerelease>(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+(?<buildmetadata>[0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)-(?<desc>[\w]+).(ddl|dml|dcl)$";
-
         internal ChangeLogEntry()
         {
         }
@@ -67,9 +66,9 @@ namespace DbCtl.Interfaces
         /// </summary>
         public string AppliedBy { get; private set; }
         /// <summary>
-        /// Type of migration applied to the database, either 'F' or 'B'. That is, forward migration or backward migration, respectively.
+        /// Type of migration applied to the database, either 'F','f' or 'B','b' in the filename. That is, forward migration or backward migration, respectively.
         /// </summary>
-        public string MigrationType { get; private set; }
+        public MigrationType MigrationType { get; private set; }
 
         private void Parse(string filename, string appliedBy, DateTime changeDateTime, string hash)
         {
@@ -79,16 +78,12 @@ namespace DbCtl.Interfaces
             if (string.IsNullOrEmpty(appliedBy))
                 throw new ArgumentNullException(nameof(appliedBy));
 
-            var regex = new Regex(RegexPattern);
-
-            var result = regex.Match(filename);
-            if (!result.Success)
-                throw new Exception($"Failed to parse {filename} to a ChangeLogEntry.");
+            var parsed = FilenameParser.Parse(filename);
 
             Filename = filename;
-            MigrationType = result.Groups["mt"].Value.ToUpperInvariant();
-            Version = result.Groups["ver"].Value;
-            Description = result.Groups["desc"].Value.Replace("_", " ");
+            MigrationType = parsed.Type;
+            Version = parsed.Version;
+            Description = parsed.Description;
             AppliedBy = appliedBy;
             ChangeDateTime = changeDateTime;
             Hash = hash;

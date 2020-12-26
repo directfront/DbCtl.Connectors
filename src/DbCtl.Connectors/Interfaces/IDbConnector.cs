@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DbCtl.Interfaces
+namespace DbCtl.Connectors
 {
     /// <summary>
     /// Primary connector interface to create the change log table, add change log entries and execute migration scripts.
