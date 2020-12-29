@@ -18,7 +18,7 @@ Adds a filename parser class and improves filename regex to be semver compatible
     <Product>DbCtl</Product>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>Direct Front Systems (Pty) Ltd.</Company>
-    <PackageLicenseExpression>apache-2.0</PackageLicenseExpression>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>

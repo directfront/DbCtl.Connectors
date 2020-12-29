@@ -16,6 +16,6 @@ before_deploy:
 deploy:
   skip_cleanup: true
   provider: script
-  script: nuget push src/DbCtl.Connectors/bin/Debug/DbCtl.Connectors.*.nupkg -Verbosity detailed -Source $NUGETSOURCE -ApiKey $NUGETAPIKEY --skip-duplicate
+  script: nuget push src/DbCtl.Connectors/bin/Debug/DbCtl.Connectors.*.nupkg -Verbosity detailed -Source $NUGETSOURCE -ApiKey $NUGETAPIKEY -SkipDuplicate
   on:
     branch: main
