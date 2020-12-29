@@ -1,3 +1,4 @@
+[![Build Status](https://www.travis-ci.com/directfront/DbCtl.Connectors.svg?branch=main)](https://www.travis-ci.com/directfront/DbCtl.Connectors)
 ![Nuget](https://img.shields.io/nuget/dt/DbCtl.Connectors?style=plastic)
 
 # DbCtl.Connectors
