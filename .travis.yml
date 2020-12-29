@@ -7,7 +7,7 @@ install:
   - dotnet restore src/DbCtl.Connectors.sln
 
 script:
-  - dotnet test src\DbCtl.Connectors.UnitTests\DbCtl.Connectors.UnitTests.csproj
+  - dotnet test src/DbCtl.Connectors.UnitTests/DbCtl.Connectors.UnitTests.csproj
   - dotnet build -c Release src/DbCtl.Connectors.sln
 
 before_deploy:
