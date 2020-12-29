@@ -8,9 +8,9 @@
     <Version>4.0.0</Version>
     <Description>Core interfaces necessary for implementing connectors.</Description>
     <Copyright>Copyright 2020 Direct Front Systems (Pty) Ltd.</Copyright>
-    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageLicenseFile></PackageLicenseFile>
     <PackageProjectUrl>https://github.com/directfront/DbCtl.Connectors</PackageProjectUrl>
-    <PackageIcon>database.png</PackageIcon>
+    <PackageIcon>icons/database.png</PackageIcon>
     <RepositoryUrl>https://github.com/directfront/DbCtl.Connectors</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>4.0.0
@@ -18,17 +18,7 @@ Adds a filename parser class and improves filename regex to be semver compatible
     <Product>DbCtl</Product>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Company>Direct Front Systems (Pty) Ltd.</Company>
+    <PackageLicenseExpression>apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\DbCtl.Core\icons\database.png">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-    <None Include="..\..\..\DbCtl.Core\LICENSE">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
 
 </Project>
