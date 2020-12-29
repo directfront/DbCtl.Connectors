@@ -1,5 +1,5 @@
 os: linux
-dist: focal
+dist: bionic
 language: csharp
 solution: src/DbCtl.Connectors.sln
 dotnet: 3.1.404
