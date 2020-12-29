@@ -10,7 +10,7 @@
     <Copyright>Copyright 2020 Direct Front Systems (Pty) Ltd.</Copyright>
     <PackageLicenseFile></PackageLicenseFile>
     <PackageProjectUrl>https://github.com/directfront/DbCtl.Connectors</PackageProjectUrl>
-    <PackageIcon>..\..\icons\database.png</PackageIcon>
+    <PackageIcon>database.png</PackageIcon>
     <RepositoryUrl>https://github.com/directfront/DbCtl.Connectors</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>4.0.0
