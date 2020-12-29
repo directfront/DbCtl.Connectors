@@ -1,4 +1,4 @@
-os: windows
+os: linux
 language: csharp
 solution: src/DbCtl.Connectors.sln
 dotnet: 5.0.101
@@ -9,4 +9,4 @@ install:
 
 script:
   - msbuild /p:Configuration=Release src/DbCtl.Connectors.sln
-  - ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe src/DbCtl.Connectors.UnitTestsbin/Release/netstandard2.1/DbCtl.Connectors.UnitTests.dll
+  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe src/DbCtl.Connectors.UnitTestsbin/Release/netstandard2.1/DbCtl.Connectors.UnitTests.dll
