@@ -1,0 +1,11 @@
+language: csharp
+solution: src/DbCtl.Connectors.sln
+dotnet: 5.0.101
+
+install:
+  - nuget restore src/DbCtl.Connectors.sln
+  - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+
+script:
+  - msbuild /p:Configuration=Release src/DbCtl.Connectors.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe src/DbCtl.Connectors.UnitTests/bin/Release/net5.0/DbCtl.Connectors.UnitTests.dll
