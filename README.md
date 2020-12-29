@@ -1,4 +1,4 @@
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/directfront/DbCtl.Connectors/DbCtl%20Connectors%20-%20CI?style=plastic)
+[![Build Status](https://www.travis-ci.com/directfront/DbCtl.Connectors.svg?branch=main)](https://www.travis-ci.com/directfront/DbCtl.Connectors)
 ![Nuget](https://img.shields.io/nuget/dt/DbCtl.Connectors?style=plastic)
 
 # DbCtl.Connectors
@@ -11,18 +11,13 @@ Below is the `DbCtlChangeLog` table schema for SQL Server. The table name `DbCtl
 
 ```sql
 CREATE TABLE DbCtlChangeLog (
-	MigrationType VARCHAR(15) NOT NULL,
+    MigrationType VARCHAR(15) NOT NULL,
     Version VARCHAR(10),
-	Description VARCHAR(255),
-	Filename VARCHAR(255) NOT NULL,
-	Hash VARCHAR(64) NOT NULL CONSTRAINT UQ_DbCtlChangeLog_Hash UNIQUE,
+    Description VARCHAR(255),
+    Filename VARCHAR(255) NOT NULL,
+    Hash VARCHAR(64) NOT NULL,
     AppliedBy VARCHAR(50) NOT NULL,
-	ChangeDateTime DATETIME NOT NULL,
+    ChangeDateTime DATETIME NOT NULL,
     CONSTRAINT PK_DbCtlChangeLog PRIMARY KEY (ChangeDateTime DESC, Version DESC)
 )
 ```
-
-# Credits
-
-Icons made by [srip](https://www.flaticon.com/authors/srip) from [Flaticon](www.flaticon.com)
-
