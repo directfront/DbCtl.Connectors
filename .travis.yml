@@ -1,7 +1,6 @@
 os: linux
 dist: bionic
 language: csharp
-solution: src/DbCtl.Connectors.sln
 dotnet: 3.1.404
 
 install:
@@ -9,5 +8,15 @@ install:
   - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 
 script:
-  - msbuild /p:Configuration=Release src/DbCtl.Connectors.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe src/DbCtl.Connectors.UnitTestsbin/Release/netstandard2.1/DbCtl.Connectors.UnitTests.dll
+  - dotnet build -c Release src/DbCtl.Connectors.sln
+  - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe src/DbCtl.Connectors.UnitTests/bin/Release/netcoreapp3.1/DbCtl.Connectors.UnitTests.dll
+
+before_deploy:
+- dotnet pack -c Release src/DbCtl.Connectors/DbCtl.Connectors.csproj
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: nuget push src/DbCtl.Connectors/bin/Debug/DbCtl.Connectors.*.nupkg -Verbosity detailed -Source $NUGETSOURCE -ApiKey $NUGETAPIKEY --skip-duplicate
+  on:
+    branch: main

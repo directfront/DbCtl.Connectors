@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <FileVersion>4.0.0.0</FileVersion>
-    <Authors>Direct Front Systems (Pty) Ltd.</Authors>
+    <Authors>Sydney du Plooy</Authors>
     <Version>4.0.0</Version>
     <Description>Core interfaces necessary for implementing connectors.</Description>
     <Copyright>Copyright 2020 Direct Front Systems (Pty) Ltd.</Copyright>
@@ -13,11 +13,11 @@
     <PackageIcon>database.png</PackageIcon>
     <RepositoryUrl>https://github.com/directfront/DbCtl.Connectors</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>
-		4.0.0
-		Adds a filename parser class and improves filename regex to be semver compatible.
-	</PackageReleaseNotes>
+    <PackageReleaseNotes>4.0.0
+Adds a filename parser class and improves filename regex to be semver compatible.	</PackageReleaseNotes>
     <Product>DbCtl</Product>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Company>Direct Front Systems (Pty) Ltd.</Company>
   </PropertyGroup>
 
   <ItemGroup>
